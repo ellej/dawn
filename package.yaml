@@ -1,0 +1,36 @@
+name:                dawn
+version:             0.5.0
+github:              "ellej/dawn"
+license:             BSD3
+author:              "Jelle Lingier"
+maintainer:          "jelle.lingier@gmail.com"
+copyright:           "2019 Jelle Lingier"
+
+extra-source-files:
+- README.adoc
+
+synopsis: A custom prelude.
+category: Prelude
+
+description: Please see the README on GitHub at <https://github.com/ellej/dawn#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- transformers
+- bytestring
+- containers
+- lifted-base
+- mtl
+- exceptions
+
+default-extensions:
+- NoImplicitPrelude
+- OverloadedStrings
+- TupleSections
+- ViewPatterns
+- MultiParamTypeClasses
+- OverloadedLists
+
+library:
+  source-dirs: src

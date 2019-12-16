@@ -229,7 +229,7 @@ tread = read . T.unpack
 terror :: Text -> a
 terror = Prelude.error . T.unpack
 
-error :: [Char] -> a
+error :: String -> a
 error = Prelude.error
 
 (++) :: Monoid m => m -> m -> m
