@@ -36,7 +36,7 @@ infixr 3 <&&> -- same infix as &&
 infixl 1 <<
 
 foreverK :: Monad m => (a -> m a) -> (a -> m b)
-foreverK k = let r = \a -> k a >>= r in r
+foreverK k = let r = k >=> r in r
 
 bind :: Monad m => m a -> (a -> m b) -> m b
 bind = (>>=)
@@ -144,7 +144,7 @@ assess f t = if f t then Just t else Nothing
 -- Data.Monoid
 
 intercalate :: Monoid s => s -> [s] -> s
-intercalate c cs = go cs where
+intercalate c = go where
    go [] = mempty
    go [str] = str
    go (str:rest) = str <> c <> go rest
