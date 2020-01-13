@@ -19,12 +19,15 @@ module Dusk (
    (<$>), (<$), (<**>), liftA, liftA2, liftA3, optional,
 
    -- Control.Monad
-   Monad ((>>=), (>>), return, fail),
+   Monad ((>>=), (>>), return),
    MonadPlus (mzero, mplus),
    (=<<), (>=>), (<=<), forever, void,
    join, mfilter, replicateM, replicateM_,
    guard, when, unless,
    liftM, liftM2, liftM3, liftM4, liftM5, ap,
+
+   -- Control.MonadFail
+   MonadFail (fail),
 
    -- Control.Monad.Identity
    Identity, runIdentity,
@@ -143,12 +146,13 @@ import Data.Foldable
 import Data.Traversable
 import Control.Applicative (Applicative (pure, (<*>), (*>), (<*)),
    Alternative ((<|>), some, many), (<$>), (<$), (<**>), liftA, liftA2, liftA3, optional)
-import Control.Monad (Monad ((>>=), (>>), return, fail),
+import Control.Monad (Monad ((>>=), (>>), return),
    MonadPlus (mzero, mplus),
    (=<<), (>=>), (<=<), forever, void,
    join, mfilter, replicateM, replicateM_,
    guard, when, unless,
    liftM, liftM2, liftM3, liftM4, liftM5, ap)
+import Control.Monad.Fail (MonadFail (fail))
 import Control.Monad.Identity (Identity, runIdentity)
 import Control.Arrow (Arrow (arr, first, second, (***), (&&&)),
    returnA, (^>>), (>>^), (<<^), (^<<),
