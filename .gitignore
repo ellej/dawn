@@ -1,5 +1,5 @@
-.stack-work/
-dawn.cabal
-
 .history/
-*.code-workspace
+dawn.code-workspace
+
+dist-newstyle/
+.ghc.environment.*
