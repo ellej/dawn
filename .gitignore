@@ -1,4 +1,5 @@
-.stack-work/
-
 .history/
-*.code-workspace
+dawn.code-workspace
+
+dist-newstyle/
+.ghc.environment.*
