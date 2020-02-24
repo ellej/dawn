@@ -54,7 +54,7 @@ module Dusk (
    Eq ((==), (/=)),
 
    -- Data.Function
-   const, flip, ($), fix, on,
+   const, flip, ($), fix, on, (&),
 
    -- Data.Maybe
    Maybe (Nothing, Just),
@@ -165,7 +165,7 @@ import Data.Monoid (Monoid (mempty, mappend, mconcat), (<>))
 import Data.Bool (Bool (False, True), (&&), (||), not, otherwise)
 import Data.Either (Either(Left, Right), either, lefts, rights, partitionEithers)
 import Data.Eq (Eq ((==), (/=)))
-import Data.Function (const, flip, ($), fix, on)
+import Data.Function (const, flip, ($), fix, on, (&))
 import Data.Maybe (Maybe (Nothing, Just),
    maybe, isJust, isNothing, fromJust, fromMaybe, listToMaybe, maybeToList, catMaybes, mapMaybe)
 import Data.List (head, last, tail, init, null, length, map, reverse, intersperse, transpose,
