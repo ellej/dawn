@@ -1,7 +1,7 @@
 cabal-version: 1.12
 
 name:           dawn
-version:        0.5.0
+version:        0.5.1
 synopsis:       A custom prelude.
 description:    Please see the README on GitHub at <https://github.com/ellej/dawn#readme>
 category:       Prelude
