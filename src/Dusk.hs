@@ -41,8 +41,9 @@ module Dusk (
    ArrowApply (app), leftApp,
    ArrowLoop (loop),
 
-   -- Data.Monoid
-   Monoid (mempty, mappend, mconcat), (<>),
+   -- Data.Monoid + Semigroup
+   Semigroup((<>)),
+   Monoid (mempty, mappend, mconcat),
 
    -- Data.Bool
    Bool (False, True), (&&), (||), not, otherwise,
@@ -161,7 +162,7 @@ import Control.Arrow (Arrow (arr, first, second, (***), (&&&)),
    ArrowChoice (left, right, (+++), (|||)),
    ArrowApply (app), leftApp,
    ArrowLoop (loop))
-import Data.Monoid (Monoid (mempty, mappend, mconcat), (<>))
+import Data.Monoid (Monoid (mempty, mappend, mconcat))
 import Data.Bool (Bool (False, True), (&&), (||), not, otherwise)
 import Data.Either (Either(Left, Right), either, lefts, rights, partitionEithers)
 import Data.Eq (Eq ((==), (/=)))
@@ -213,7 +214,8 @@ import Prelude (Char, IO, seq, ($!), undefined,
    RealFrac (properFraction, truncate, round, ceiling, floor),
    RealFloat (floatRadix, floatDigits, floatRange, decodeFloat, encodeFloat, exponent,
       significand, scaleFloat, isNaN, isInfinite, isDenormalized, isNegativeZero, isIEEE, atan2),
-   fromIntegral, realToFrac, subtract, even, odd, gcd, lcm, (^), (^^))
+   fromIntegral, realToFrac, subtract, even, odd, gcd, lcm, (^), (^^),
+   Semigroup((<>)))
 
 import qualified Data.Text as T
 
@@ -236,6 +238,6 @@ terror = Prelude.error . T.unpack
 error :: String -> a
 error = Prelude.error
 
-(++) :: Monoid m => m -> m -> m
+(++) :: Semigroup m => m -> m -> m
 (++) = (<>)
 infixr 5 ++ -- same as Prelude.++
